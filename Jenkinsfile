@@ -37,11 +37,11 @@ pipeline {
                 }
             }
         }
-        stage("deploy") {
+        stage("deploy in nexus") {
             steps {
                 script {
                     echo "deploying"
-                    v.deployApp()
+                    gv.deployApp()
                 }
             }
         }
