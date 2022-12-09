@@ -2,7 +2,7 @@ def gv
 
 pipeline {
     agent {
-        docker {  image 'maven:3.8.1-adoptopenjdk-11'}
+        docker { image 'node:16.13.1-alpine' }
     }
     
     stages {
@@ -29,19 +29,21 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        
+        stage("deploy on nexus") {
+            steps {
+                script {
+                    echo "deploying"
+                    
+                }
+            }
+        }
+
+        stage("build docker image") {
             steps {
                 script {
                     echo "building image"
                     gv.buildImage()
-                }
-            }
-        }
-        stage("deploy in nexus") {
-            steps {
-                script {
-                    echo "deploying"
-                    gv.deployApp()
                 }
             }
         }
