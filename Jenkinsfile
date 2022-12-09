@@ -18,6 +18,14 @@ pipeline {
                 }
             }
         }
+        stage("test ") {
+            steps {
+                script {
+                    echo "testing ..."
+                    gv.test()
+                }
+            }
+        }
         stage("build image") {
             steps {
                 script {
