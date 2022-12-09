@@ -19,6 +19,7 @@ def test() {
 
 def deployApp() {
     echo 'deploying the application...'
+    sh 'mvn deploy'
 } 
 
 return this

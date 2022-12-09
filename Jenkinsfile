@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     echo "deploying"
-                    //gv.deployApp()
+                    v.deployApp()
                 }
             }
         }
